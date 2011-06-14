@@ -12,7 +12,7 @@ require 'shoulda'
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
-require 'soccer_mom'
+require 'catalyst'
 
 class Test::Unit::TestCase
 end
