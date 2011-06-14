@@ -5,5 +5,9 @@ module Catalyst
       @hash = hsh
     end
     
+    def []=(k,v)
+      @hash[k] = v
+    end
+    
   end
 end
