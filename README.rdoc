@@ -1,6 +1,15 @@
 = catalyst
 
-Description goes here.
+Catalyst carries your application with a stack (with history) and middleware. Basically it let's you build your own rack-like strut for your apps. This is heavily based on the work that https://github.com/mitchellh and https://github.com/chneukirchen/rack have done in building a middleware architecture.
+
+Example:
+
+    run_stack = Catalyst::RunStack.new do
+      use MiddlewareClass
+      use lambda {|env|  }
+    end
+    
+    run_stack.call(environment || {})
 
 == Contributing to catalyst
  

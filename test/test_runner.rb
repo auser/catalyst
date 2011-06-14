@@ -50,6 +50,10 @@ class TestRunner < Test::Unit::TestCase
         assert @instance.actions.empty?
         assert !@instance.history.empty?
       end
+      
+      should "call filtered actions" do
+        
+      end
     end
     
   end
