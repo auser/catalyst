@@ -7,7 +7,7 @@ class TestCatalyst < Test::Unit::TestCase
     end
     
     def call(env)
-      # p [:app, @app.stack]
+      @app.call(env)
     end
   end
   
@@ -29,12 +29,14 @@ class TestCatalyst < Test::Unit::TestCase
     end
     
     should "be able to call a stack" do
+      @@filtered_through_stack = false
       @rs = Catalyst::RunStack.new do
         use TestCatalystMiddleware
-        use lambda {|env| p [:env, env]}
+        use lambda {|env| @@filtered_through_stack = true }
       end
       
       @rs.call({})
+      assert @@filtered_through_stack
     end
     
   end

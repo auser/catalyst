@@ -20,7 +20,18 @@ module Catalyst
     end
     
     def setup_action(action)
-      action
+      klass, args, block = action
+      
+      if klass.is_a?(Class)
+        klass.new(self, *args, &block)
+      elsif klass.respond_to?(:call)
+        lambda do |env|
+          klass.call(env)
+          self.call(env)
+        end
+      else
+        raise
+      end
     end
   end
 end

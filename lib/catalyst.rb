@@ -16,26 +16,13 @@ module Catalyst
     end
     
     # Use 'middleware'
-    def use(k, &block)
+    def use(k, *args, &block)
       if k.is_a?(RunStack)
         stack.concat(k.stack)
       else
-        stack << concat_to_stack(k, &block)
+        stack << [k, *args, block]
       end
       self
-    end
-    
-    def concat_to_stack(klass, &block)
-      if klass.is_a?(Class)
-        klass.new(self, &block)
-      elsif klass.respond_to?(:call)
-        lambda do |env|
-          klass.call(env)
-          self.call(env)
-        end
-      else
-        raise
-      end
     end
     
     # run is just another term for 'use'
