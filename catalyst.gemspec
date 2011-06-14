@@ -35,7 +35,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.6.2}
-  s.summary = %q{TODO: one-line summary of your gem}
+  s.summary = %q{Quickly build a framework for providing a middleware-like structure}
   s.test_files = [
     "test/helper.rb",
     "test/test_catalyst.rb",
