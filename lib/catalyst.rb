@@ -1,11 +1,12 @@
 $:.unshift(File.dirname(__FILE__))
+require 'moneta'
 
 module Catalyst
   autoload :Runner, 'catalyst/runner'
-  autoload :Environment, 'catalyst/environment'
   
   class RunStack
     
+    # Start a RunStack with a block
     def initialize(&block)
       instance_eval(&block) if block_given?
     end
@@ -37,7 +38,7 @@ module Catalyst
     
     # Start off the middleware
     def call(env)
-      to_app.call(env.is_a?(Environment) ? env : Environment.new(env))
+      to_app.call(env)
     end 
   end
 end

@@ -18,7 +18,7 @@ require 'catalyst'
 class Test::Unit::TestCase
   
   def new_environment(env={})
-    Catalyst::Environment.new(env)
+    {}.merge(env)
   end
   
 end
