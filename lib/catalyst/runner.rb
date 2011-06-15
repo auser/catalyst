@@ -7,11 +7,11 @@ module Catalyst
       @actions = actions.map {|act| setup_action(act) }
     end
     
-    def call(env)
-      return if @actions.empty?
+    def call(env={})
+      return if actions.empty?
 
       begin
-        action = @history.unshift(@actions.shift).first
+        action = history.unshift(@actions.shift).first
         action.call(env)
       rescue Exception => e
         env["catalyst.error"] = e
@@ -26,8 +26,7 @@ module Catalyst
         klass.new(self, *args, &block)
       elsif klass.respond_to?(:call)
         lambda do |env|
-          klass.call(env)
-          self.call(env)
+          self.call(klass.call(env))
         end
       else
         raise

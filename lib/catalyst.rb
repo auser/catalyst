@@ -4,6 +4,10 @@ require 'moneta'
 module Catalyst
   autoload :Runner, 'catalyst/runner'
   
+  def self.run_stack(&block)
+    RunStack.new(&block)
+  end
+  
   class RunStack
     
     # Start a RunStack with a block
@@ -26,18 +30,13 @@ module Catalyst
       self
     end
     
-    # run is just another term for 'use'
-    def run
-      @run = app
-    end
-    
     # Turn this RunStack to a Runner
     def to_app
       Runner.new(stack)
     end
     
     # Start off the middleware
-    def call(env)
+    def call(env={})
       to_app.call(env)
     end 
   end
