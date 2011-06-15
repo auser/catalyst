@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "catalyst"
   gem.homepage = "http://github.com/auser/catalyst"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Quickly build a framework for providing a middleware-like structure}
+  gem.description = %Q{Quickly build a framework for providing a middleware-like structure}
   gem.email = "arilerner@mac.com"
   gem.authors = ["Ari Lerner"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
