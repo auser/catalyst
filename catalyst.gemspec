@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{catalyst}
-  s.version = "0.0.4"
+  s.version = "0.0.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ari Lerner"]
-  s.date = %q{2011-06-27}
+  s.date = %q{2011-07-26}
   s.description = %q{Quickly build a framework for providing a middleware-like structure}
   s.email = %q{arilerner@mac.com}
   s.extra_rdoc_files = [
@@ -52,6 +52,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
+      s.add_development_dependency(%q<rdoc>, [">= 0"])
     else
       s.add_dependency(%q<moneta>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
@@ -59,6 +60,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_dependency(%q<rcov>, [">= 0"])
+      s.add_dependency(%q<rdoc>, [">= 0"])
     end
   else
     s.add_dependency(%q<moneta>, [">= 0"])
@@ -67,6 +69,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
     s.add_dependency(%q<rcov>, [">= 0"])
+    s.add_dependency(%q<rdoc>, [">= 0"])
   end
 end
 
