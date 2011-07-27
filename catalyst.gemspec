@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{catalyst}
-  s.version = "0.0.5"
+  s.version = "0.0.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ari Lerner"]
-  s.date = %q{2011-07-26}
+  s.date = %q{2011-07-27}
   s.description = %q{Quickly build a framework for providing a middleware-like structure}
   s.email = %q{arilerner@mac.com}
   s.extra_rdoc_files = [
