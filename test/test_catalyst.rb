@@ -31,13 +31,13 @@ class TestCatalyst < Test::Unit::TestCase
     should "not call the next app if @app.call is not invoked" do
       @@count = 0
       rs = Catalyst::RunStack.new do
-        use lambda {|env, app| @@count += 1; app.call }
+        use lambda {|env, app| @@count += 1; app.call(env) }
         use lambda {|env, app| @@count += 1 }
         use lambda {|env, app| @@count += 1 }
         use lambda {|env, app| @@count += 1 }
       end
       
-      rs.call
+      rs.call({'i' => 0})
       assert_equal 2, @@count
     end
     
