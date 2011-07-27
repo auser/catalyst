@@ -49,6 +49,16 @@ class TestCatalyst < Test::Unit::TestCase
       rs.call()
       assert_equal @@count, 3
     end
+  end
+  
+  should "be able to call run in place of use" do
+    @@count = 0
+    rs = Catalyst.run_stack do
+      use lambda {|env| @@count += 1}
+      run lambda {|env| @@count += 1}
+    end
     
+    rs.call
+    assert_equal @@count, 2
   end
 end

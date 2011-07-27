@@ -30,6 +30,8 @@ module Catalyst
       self
     end
     
+    alias_method :run, :use
+    
     # Turn this RunStack to a Runner
     def to_app
       Runner.new(stack)
