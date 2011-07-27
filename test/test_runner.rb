@@ -26,7 +26,7 @@ class TestRunner < Test::Unit::TestCase
         env = new_environment
         env.expects(:foo).once
 
-        func = lambda { |x| x.foo }
+        func = lambda { |x, app| x.foo }
         @instance.setup_action(func).call(env)
       end
       

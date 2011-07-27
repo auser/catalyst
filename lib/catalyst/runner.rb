@@ -26,7 +26,7 @@ module Catalyst
         klass.new(*[self, args].flatten.compact, &block)
       elsif klass.respond_to?(:call)
         lambda do |env|
-          self.call(klass.call(env))
+          klass.call(*[env, self].flatten.compact)
         end
       else
         raise
