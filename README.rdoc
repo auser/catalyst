@@ -6,10 +6,13 @@ Example:
 
     run_stack = Catalyst::RunStack.new do
       use MiddlewareClass
-      use lambda {|env|  }
+      run lambda {|env, app|  }
     end
     
     run_stack.call(environment || {})
+    
+
+The code is pretty straightforward.
 
 == Contributing to catalyst
  
