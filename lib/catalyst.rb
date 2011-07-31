@@ -25,7 +25,7 @@ module Catalyst
       if k.is_a?(RunStack)
         stack.concat(k.stack)
       else
-        stack << [k, *args, block]
+        stack << [k, args, block]
       end
       self
     end
